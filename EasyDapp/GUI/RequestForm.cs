@@ -24,7 +24,6 @@ namespace EasyDapp.GUI
             {
                 try
                 {
-                    MessageBox.Show(sqlConn);
                     SqlConnection SqlConnection = new SqlConnection(sqlConn);
                     SqlCommand SqlCommand = SqlConnection.CreateCommand();
                     SqlCommand.CommandText = textBox1.Text;

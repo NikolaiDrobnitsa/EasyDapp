@@ -115,5 +115,11 @@
   <ItemGroup>
     <None Include="Resources\req.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-reload-vector-icon-png-image_696434.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\table_img.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

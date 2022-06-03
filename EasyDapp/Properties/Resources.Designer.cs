@@ -73,9 +73,29 @@ namespace EasyDapp.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pngtree_reload_vector_icon_png_image_696434 {
+            get {
+                object obj = ResourceManager.GetObject("pngtree-reload-vector-icon-png-image_696434", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap req {
             get {
                 object obj = ResourceManager.GetObject("req", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap table_img {
+            get {
+                object obj = ResourceManager.GetObject("table_img", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

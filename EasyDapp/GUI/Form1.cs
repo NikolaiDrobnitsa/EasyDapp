@@ -74,7 +74,6 @@ namespace EasyDapp
             try
             {
                 conn.Open();
-                MessageBox.Show("Ок");
             }
             catch (SqlException se)
             {
@@ -87,9 +86,6 @@ namespace EasyDapp
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    //string table = reader.GetString(0);
-                    //textBox1.Text += "\n" + reader.GetString(0);
-                    //MessageBox.Show(reader.GetString(0));
                     treeView1.Nodes[0].Nodes[0].Nodes.Add(reader.GetString(0));
                 }
             }
@@ -102,20 +98,46 @@ namespace EasyDapp
         }
         private void Refresh_button_Click(object sender, EventArgs e)
         {
-            fill_name_table();
-            treeView1.Nodes[0].ExpandAll();
+            
         }
 
         private void View_table_button_Click(object sender, EventArgs e)
         {
-            fill_grid_view();
+            
         }
 
         private void Req_pictureBox_Click(object sender, EventArgs e)
         {
-            RequestForm requestForm = new RequestForm();
-            requestForm.sqlConn = Global_sting_conn;
-            requestForm.Show();
+            if (Global_sting_conn != null)
+            {
+                RequestForm requestForm = new RequestForm();
+                requestForm.sqlConn = Global_sting_conn;
+                requestForm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Подключите БД", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+        }
+
+        private void Refresh_pictureBox_Click(object sender, EventArgs e)
+        {
+            if (Global_sting_conn != null)
+            {
+                fill_name_table();
+                treeView1.Nodes[0].ExpandAll();
+            }
+            else
+            {
+                MessageBox.Show("Подключите БД","Ошибка",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+            
+        }
+
+        private void Show_table_pictureBox_Click(object sender, EventArgs e)
+        {
+            fill_grid_view();
         }
     }
 }

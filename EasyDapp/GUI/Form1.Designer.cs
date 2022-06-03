@@ -30,31 +30,39 @@ namespace EasyDapp
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Таблицы");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("dbo_", new System.Windows.Forms.TreeNode[] {
-            treeNode1});
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Таблицы");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("dbo_", new System.Windows.Forms.TreeNode[] {
+            treeNode3});
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Show_table_label = new System.Windows.Forms.Label();
+            this.Show_table_pictureBox = new System.Windows.Forms.PictureBox();
+            this.Request_label = new System.Windows.Forms.Label();
+            this.Refresh_label = new System.Windows.Forms.Label();
+            this.Refresh_pictureBox = new System.Windows.Forms.PictureBox();
+            this.Req_pictureBox = new System.Windows.Forms.PictureBox();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.labelAddBD = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.dbToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.Refresh_button = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.View_table_button = new System.Windows.Forms.Button();
-            this.Req_pictureBox = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            this.contextMenuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Show_table_pictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Refresh_pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Req_pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.Show_table_label);
+            this.panel1.Controls.Add(this.Show_table_pictureBox);
+            this.panel1.Controls.Add(this.Request_label);
+            this.panel1.Controls.Add(this.Refresh_label);
+            this.panel1.Controls.Add(this.Refresh_pictureBox);
             this.panel1.Controls.Add(this.Req_pictureBox);
-            this.panel1.Controls.Add(this.View_table_button);
-            this.panel1.Controls.Add(this.Refresh_button);
             this.panel1.Controls.Add(this.treeView1);
             this.panel1.Controls.Add(this.labelAddBD);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -64,28 +72,101 @@ namespace EasyDapp
             this.panel1.Size = new System.Drawing.Size(200, 450);
             this.panel1.TabIndex = 0;
             // 
+            // Show_table_label
+            // 
+            this.Show_table_label.AutoSize = true;
+            this.Show_table_label.Location = new System.Drawing.Point(50, 367);
+            this.Show_table_label.Name = "Show_table_label";
+            this.Show_table_label.Size = new System.Drawing.Size(86, 13);
+            this.Show_table_label.TabIndex = 10;
+            this.Show_table_label.Text = "Вывод таблицы";
+            // 
+            // Show_table_pictureBox
+            // 
+            this.Show_table_pictureBox.BackgroundImage = global::EasyDapp.Properties.Resources.table_img;
+            this.Show_table_pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Show_table_pictureBox.Location = new System.Drawing.Point(62, 322);
+            this.Show_table_pictureBox.Name = "Show_table_pictureBox";
+            this.Show_table_pictureBox.Size = new System.Drawing.Size(60, 41);
+            this.Show_table_pictureBox.TabIndex = 9;
+            this.Show_table_pictureBox.TabStop = false;
+            this.Show_table_pictureBox.Click += new System.EventHandler(this.Show_table_pictureBox_Click);
+            // 
+            // Request_label
+            // 
+            this.Request_label.AutoSize = true;
+            this.Request_label.Location = new System.Drawing.Point(147, 43);
+            this.Request_label.MaximumSize = new System.Drawing.Size(70, 0);
+            this.Request_label.Name = "Request_label";
+            this.Request_label.Size = new System.Drawing.Size(44, 13);
+            this.Request_label.TabIndex = 8;
+            this.Request_label.Text = "Запрос";
+            // 
+            // Refresh_label
+            // 
+            this.Refresh_label.AutoSize = true;
+            this.Refresh_label.Location = new System.Drawing.Point(76, 43);
+            this.Refresh_label.MaximumSize = new System.Drawing.Size(70, 0);
+            this.Refresh_label.Name = "Refresh_label";
+            this.Refresh_label.Size = new System.Drawing.Size(56, 13);
+            this.Refresh_label.TabIndex = 7;
+            this.Refresh_label.Text = "Обновить";
+            // 
+            // Refresh_pictureBox
+            // 
+            this.Refresh_pictureBox.BackgroundImage = global::EasyDapp.Properties.Resources.pngtree_reload_vector_icon_png_image_696434;
+            this.Refresh_pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Refresh_pictureBox.Location = new System.Drawing.Point(73, 6);
+            this.Refresh_pictureBox.Name = "Refresh_pictureBox";
+            this.Refresh_pictureBox.Size = new System.Drawing.Size(59, 34);
+            this.Refresh_pictureBox.TabIndex = 6;
+            this.Refresh_pictureBox.TabStop = false;
+            this.Refresh_pictureBox.Click += new System.EventHandler(this.Refresh_pictureBox_Click);
+            // 
+            // Req_pictureBox
+            // 
+            this.Req_pictureBox.BackgroundImage = global::EasyDapp.Properties.Resources.req;
+            this.Req_pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Req_pictureBox.Location = new System.Drawing.Point(138, 6);
+            this.Req_pictureBox.Name = "Req_pictureBox";
+            this.Req_pictureBox.Size = new System.Drawing.Size(59, 34);
+            this.Req_pictureBox.TabIndex = 5;
+            this.Req_pictureBox.TabStop = false;
+            this.Req_pictureBox.Click += new System.EventHandler(this.Req_pictureBox_Click);
+            // 
             // treeView1
             // 
             this.treeView1.Location = new System.Drawing.Point(8, 72);
             this.treeView1.Name = "treeView1";
-            treeNode1.Name = "Tables";
-            treeNode1.Text = "Таблицы";
-            treeNode2.Name = "NameBD";
-            treeNode2.Text = "dbo_";
+            treeNode3.Name = "Tables";
+            treeNode3.Text = "Таблицы";
+            treeNode4.Name = "NameBD";
+            treeNode4.Text = "dbo_";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode2});
+            treeNode4});
             this.treeView1.Size = new System.Drawing.Size(173, 244);
             this.treeView1.TabIndex = 2;
             // 
             // labelAddBD
             // 
             this.labelAddBD.AutoSize = true;
-            this.labelAddBD.Location = new System.Drawing.Point(7, 43);
+            this.labelAddBD.Location = new System.Drawing.Point(3, 43);
             this.labelAddBD.MaximumSize = new System.Drawing.Size(70, 0);
             this.labelAddBD.Name = "labelAddBD";
             this.labelAddBD.Size = new System.Drawing.Size(69, 26);
             this.labelAddBD.TabIndex = 1;
             this.labelAddBD.Text = "Подключить БД";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::EasyDapp.Properties.Resources.database_symbol_test_data_management_icon_1142395;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(8, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(59, 34);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // contextMenuStrip1
             // 
@@ -100,16 +181,6 @@ namespace EasyDapp
             this.dbToolStripMenuItem.Size = new System.Drawing.Size(89, 22);
             this.dbToolStripMenuItem.Text = "Db";
             // 
-            // Refresh_button
-            // 
-            this.Refresh_button.Location = new System.Drawing.Point(96, 13);
-            this.Refresh_button.Name = "Refresh_button";
-            this.Refresh_button.Size = new System.Drawing.Size(75, 23);
-            this.Refresh_button.TabIndex = 3;
-            this.Refresh_button.Text = "Refresh";
-            this.Refresh_button.UseVisualStyleBackColor = true;
-            this.Refresh_button.Click += new System.EventHandler(this.Refresh_button_Click);
-            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -118,38 +189,6 @@ namespace EasyDapp
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(669, 450);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // View_table_button
-            // 
-            this.View_table_button.Location = new System.Drawing.Point(96, 43);
-            this.View_table_button.Name = "View_table_button";
-            this.View_table_button.Size = new System.Drawing.Size(75, 23);
-            this.View_table_button.TabIndex = 4;
-            this.View_table_button.Text = "Wiev";
-            this.View_table_button.UseVisualStyleBackColor = true;
-            this.View_table_button.Click += new System.EventHandler(this.View_table_button_Click);
-            // 
-            // Req_pictureBox
-            // 
-            this.Req_pictureBox.BackgroundImage = global::EasyDapp.Properties.Resources.req;
-            this.Req_pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Req_pictureBox.Location = new System.Drawing.Point(17, 322);
-            this.Req_pictureBox.Name = "Req_pictureBox";
-            this.Req_pictureBox.Size = new System.Drawing.Size(59, 34);
-            this.Req_pictureBox.TabIndex = 5;
-            this.Req_pictureBox.TabStop = false;
-            this.Req_pictureBox.Click += new System.EventHandler(this.Req_pictureBox_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::EasyDapp.Properties.Resources.database_symbol_test_data_management_icon_1142395;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(8, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(59, 34);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Form1
             // 
@@ -162,10 +201,12 @@ namespace EasyDapp
             this.Text = "EasyDapp";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.contextMenuStrip1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Show_table_pictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Refresh_pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Req_pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -178,10 +219,13 @@ namespace EasyDapp
         public System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem dbToolStripMenuItem;
-        private System.Windows.Forms.Button Refresh_button;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button View_table_button;
         private System.Windows.Forms.PictureBox Req_pictureBox;
+        private System.Windows.Forms.PictureBox Refresh_pictureBox;
+        private System.Windows.Forms.PictureBox Show_table_pictureBox;
+        private System.Windows.Forms.Label Request_label;
+        private System.Windows.Forms.Label Refresh_label;
+        private System.Windows.Forms.Label Show_table_label;
     }
 }
 
