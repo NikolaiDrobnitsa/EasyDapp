@@ -26,7 +26,8 @@ namespace EasyDapp.GUI
             {
                 connection.Open();
                 MessageBox.Show("Проверка подключение выполнена!");
-                DataBase = Name_database_textBox.Text;
+                DataBase = Name_data_textBox.Text;
+
 
             }
             catch (SqlException ex)
@@ -54,10 +55,11 @@ namespace EasyDapp.GUI
 
         private void OK_button_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
+            //Form1 form1 = new Form1();
             //Serialize.saveTree(TreeView, "tree");
             //form1.treeView1.Nodes.Clear();
-            form1.treeView1.Nodes[0].Nodes[1].Text = "ssssss";
+            //form1.treeView1.Nodes[0].Nodes[1].Text = "ssssss";
+            //form1.treeView1.Nodes[0].Text = DataBase;
             //TreeNode treeNode5 = new TreeNode("dbo_011");
             //treeNode5.Nodes.Add(treeNode5);
             //TreeNode treeNode1 = new TreeNode("Pupkin");

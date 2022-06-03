@@ -25,17 +25,15 @@ namespace EasyDapp
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             ConnectionFrom connectionFrom = new ConnectionFrom();
-            connectionFrom.Show();
+            connectionFrom.ShowDialog();
             treeView1.Nodes[0].Text = connectionFrom.DataBase;
-                
+            fill_name_table();
         }
         bool check_fill_wiev = false;
         private void fill_grid_view()
         {
             if (treeView1.SelectedNode.Level == 2)
             {
-
-
                 if (check_fill_wiev == true)
                 {
                     table.Clear();
@@ -106,6 +104,7 @@ namespace EasyDapp
         {
             fill_name_table();
             treeView1.Nodes[0].ExpandAll();
+            //treeView1.Nodes[0].Text = DataBase;
         }
 
         private void View_table_button_Click(object sender, EventArgs e)

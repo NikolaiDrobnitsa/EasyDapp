@@ -30,13 +30,9 @@ namespace EasyDapp
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Таблицы");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("name_procedure");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Процедуры", new System.Windows.Forms.TreeNode[] {
-            treeNode6});
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("dbo_", new System.Windows.Forms.TreeNode[] {
-            treeNode5,
-            treeNode7});
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Таблицы");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("dbo_", new System.Windows.Forms.TreeNode[] {
+            treeNode3});
             this.panel1 = new System.Windows.Forms.Panel();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.labelAddBD = new System.Windows.Forms.Label();
@@ -69,16 +65,12 @@ namespace EasyDapp
             // 
             this.treeView1.Location = new System.Drawing.Point(8, 72);
             this.treeView1.Name = "treeView1";
-            treeNode5.Name = "Tables";
-            treeNode5.Text = "Таблицы";
-            treeNode6.Name = "Procedure_1";
-            treeNode6.Text = "name_procedure";
-            treeNode7.Name = "Procedures";
-            treeNode7.Text = "Процедуры";
-            treeNode8.Name = "NameBD";
-            treeNode8.Text = "dbo_";
+            treeNode3.Name = "Tables";
+            treeNode3.Text = "Таблицы";
+            treeNode4.Name = "NameBD";
+            treeNode4.Text = "dbo_";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode8});
+            treeNode4});
             this.treeView1.Size = new System.Drawing.Size(173, 244);
             this.treeView1.TabIndex = 2;
             // 
@@ -153,7 +145,7 @@ namespace EasyDapp
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "EasyDapp";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
