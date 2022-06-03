@@ -40,18 +40,24 @@ namespace EasyDapp
             treeNode2,
             treeNode4});
             this.panel1 = new System.Windows.Forms.Panel();
+            this.treeView1 = new System.Windows.Forms.TreeView();
             this.labelAddBD = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.dbToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.Refresh_button = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.View_table_button = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.View_table_button);
+            this.panel1.Controls.Add(this.Refresh_button);
             this.panel1.Controls.Add(this.treeView1);
             this.panel1.Controls.Add(this.labelAddBD);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -60,6 +66,25 @@ namespace EasyDapp
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 450);
             this.panel1.TabIndex = 0;
+            // 
+            // treeView1
+            // 
+            this.treeView1.Location = new System.Drawing.Point(8, 72);
+            this.treeView1.Name = "treeView1";
+            treeNode1.Name = "Table_1";
+            treeNode1.Text = "name_table";
+            treeNode2.Name = "Tables";
+            treeNode2.Text = "Таблицы";
+            treeNode3.Name = "Procedure_1";
+            treeNode3.Text = "name_procedure";
+            treeNode4.Name = "Procedures";
+            treeNode4.Text = "Процедуры";
+            treeNode5.Name = "NameBD";
+            treeNode5.Text = "dbo_";
+            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode5});
+            this.treeView1.Size = new System.Drawing.Size(173, 244);
+            this.treeView1.TabIndex = 2;
             // 
             // labelAddBD
             // 
@@ -95,30 +120,41 @@ namespace EasyDapp
             this.dbToolStripMenuItem.Size = new System.Drawing.Size(89, 22);
             this.dbToolStripMenuItem.Text = "Db";
             // 
-            // treeView1
+            // Refresh_button
             // 
-            this.treeView1.Location = new System.Drawing.Point(8, 72);
-            this.treeView1.Name = "treeView1";
-            treeNode1.Name = "Table_1";
-            treeNode1.Text = "name_table";
-            treeNode2.Name = "Tables";
-            treeNode2.Text = "Таблицы";
-            treeNode3.Name = "Procedure_1";
-            treeNode3.Text = "name_procedure";
-            treeNode4.Name = "Procedures";
-            treeNode4.Text = "Процедуры";
-            treeNode5.Name = "NameBD";
-            treeNode5.Text = "dbo_";
-            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode5});
-            this.treeView1.Size = new System.Drawing.Size(173, 244);
-            this.treeView1.TabIndex = 2;
+            this.Refresh_button.Location = new System.Drawing.Point(96, 13);
+            this.Refresh_button.Name = "Refresh_button";
+            this.Refresh_button.Size = new System.Drawing.Size(75, 23);
+            this.Refresh_button.TabIndex = 3;
+            this.Refresh_button.Text = "Refresh";
+            this.Refresh_button.UseVisualStyleBackColor = true;
+            this.Refresh_button.Click += new System.EventHandler(this.Refresh_button_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(200, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(600, 450);
+            this.dataGridView1.TabIndex = 1;
+            // 
+            // View_table_button
+            // 
+            this.View_table_button.Location = new System.Drawing.Point(96, 43);
+            this.View_table_button.Name = "View_table_button";
+            this.View_table_button.Size = new System.Drawing.Size(75, 23);
+            this.View_table_button.TabIndex = 4;
+            this.View_table_button.Text = "Wiev";
+            this.View_table_button.UseVisualStyleBackColor = true;
+            this.View_table_button.Click += new System.EventHandler(this.View_table_button_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -126,6 +162,7 @@ namespace EasyDapp
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -135,9 +172,12 @@ namespace EasyDapp
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label labelAddBD;
-        private System.Windows.Forms.TreeView treeView1;
+        public System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem dbToolStripMenuItem;
+        private System.Windows.Forms.Button Refresh_button;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button View_table_button;
     }
 }
 

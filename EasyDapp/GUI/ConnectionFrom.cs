@@ -54,6 +54,15 @@ namespace EasyDapp.GUI
 
         private void OK_button_Click(object sender, EventArgs e)
         {
+            Form1 form1 = new Form1();
+            //Serialize.saveTree(TreeView, "tree");
+            //form1.treeView1.Nodes.Clear();
+            form1.treeView1.Nodes[0].Nodes[1].Text = "ssssss";
+            //TreeNode treeNode5 = new TreeNode("dbo_011");
+            //treeNode5.Nodes.Add(treeNode5);
+            //TreeNode treeNode1 = new TreeNode("Pupkin");
+            //treeNode1.Nodes.Add(treeNode1);
+            //form1.treeView1.Refresh();
             this.Close();
         }
 
