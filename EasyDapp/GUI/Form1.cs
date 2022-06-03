@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EasyDapp.GUI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,13 @@ namespace EasyDapp
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            ConnectionFrom connectionFrom = new ConnectionFrom();
+            connectionFrom.Show();
+                
         }
     }
 }

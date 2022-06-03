@@ -52,6 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GUI\ConnectionFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ConnectionFrom.Designer.cs">
+      <DependentUpon>ConnectionFrom.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\ConnectionFrom.resx">
+      <DependentUpon>ConnectionFrom.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
