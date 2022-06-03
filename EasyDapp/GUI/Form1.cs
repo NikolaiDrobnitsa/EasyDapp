@@ -26,26 +26,36 @@ namespace EasyDapp
         {
             ConnectionFrom connectionFrom = new ConnectionFrom();
             connectionFrom.Show();
+            treeView1.Nodes[0].Text = connectionFrom.DataBase;
                 
         }
         bool check_fill_wiev = false;
         private void fill_grid_view()
         {
-            if (check_fill_wiev == true)
+            if (treeView1.SelectedNode.Level == 2)
             {
-                table.Clear();
+
+
+                if (check_fill_wiev == true)
+                {
+                    table.Clear();
+                }
+                else
+                {
+                    check_fill_wiev = false;
+                }
+                sqlConnection = new SqlConnection(@"Data Source=SQL5108.site4now.net;Initial Catalog=db_a85cd7_nick;User Id=db_a85cd7_nick_admin;Password=Passvbu011");
+                sqlConnection.Open();
+                adapter = new SqlDataAdapter("SELECT * FROM " + treeView1.SelectedNode.Text, sqlConnection);
+                table = new DataTable();
+                adapter.Fill(table);
+                dataGridView1.DataSource = table;
+                check_fill_wiev = true;
             }
             else
             {
-                check_fill_wiev = false;
+                MessageBox.Show("Выберите таблицу!", "Ошибка!", MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
-            sqlConnection = new SqlConnection(@"Data Source=SQL5108.site4now.net;Initial Catalog=db_a85cd7_nick;User Id=db_a85cd7_nick_admin;Password=Passvbu011");
-            sqlConnection.Open();
-            adapter = new SqlDataAdapter("SELECT * FROM " + treeView1.SelectedNode.Text, sqlConnection);
-            table = new DataTable();
-            adapter.Fill(table);
-            dataGridView1.DataSource = table;
-            check_fill_wiev = true;
         }
         bool check_fill_name = false;
         private void fill_name_table()
@@ -95,11 +105,13 @@ namespace EasyDapp
         private void Refresh_button_Click(object sender, EventArgs e)
         {
             fill_name_table();
+            treeView1.Nodes[0].ExpandAll();
         }
 
         private void View_table_button_Click(object sender, EventArgs e)
         {
             fill_grid_view();
+            
         }
     }
 }

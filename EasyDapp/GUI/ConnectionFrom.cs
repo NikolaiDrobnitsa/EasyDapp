@@ -17,7 +17,7 @@ namespace EasyDapp.GUI
         {
             InitializeComponent();
         }
-
+        public string DataBase { get; set; }
         private void Check_button_Click(object sender, EventArgs e)
         {
             string connectionString = @"Data Source = " + Name_database_textBox.Text +"; Initial Catalog = "+Name_data_textBox.Text + "; User Id = "+Name_user_textBox.Text+"; Password = "+ Pass_user_textBox.Text;
@@ -26,16 +26,16 @@ namespace EasyDapp.GUI
             {
                 connection.Open();
                 MessageBox.Show("Проверка подключение выполнена!");
+                DataBase = Name_database_textBox.Text;
 
             }
             catch (SqlException ex)
             {
-                Console.WriteLine(ex.Message);
+                MessageBox.Show("Ошибка введенных данных!");
             }
             finally
             {
                 connection.Close();
-                MessageBox.Show("Ошибка введенных данных!");
 
             }
         }
