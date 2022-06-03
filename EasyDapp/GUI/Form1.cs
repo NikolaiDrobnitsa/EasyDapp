@@ -14,22 +14,26 @@ namespace EasyDapp
 {
     public partial class Form1 : Form
     {
+        public string Global_sting_conn { get; set; }
+
         private SqlConnection sqlConnection = null;
         private SqlDataAdapter adapter = null;
         private DataTable table = null;
+
+        bool check_fill_name = false;
+        bool check_fill_wiev = false;
         public Form1()
         {
             InitializeComponent();
         }
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             ConnectionFrom connectionFrom = new ConnectionFrom();
             connectionFrom.ShowDialog();
             treeView1.Nodes[0].Text = connectionFrom.DataBase;
+            Global_sting_conn = connectionFrom.ConnString;
             fill_name_table();
         }
-        bool check_fill_wiev = false;
         private void fill_grid_view()
         {
             if (treeView1.SelectedNode.Level == 2)
@@ -42,7 +46,7 @@ namespace EasyDapp
                 {
                     check_fill_wiev = false;
                 }
-                sqlConnection = new SqlConnection(@"Data Source=SQL5108.site4now.net;Initial Catalog=db_a85cd7_nick;User Id=db_a85cd7_nick_admin;Password=Passvbu011");
+                sqlConnection = new SqlConnection(Global_sting_conn);
                 sqlConnection.Open();
                 adapter = new SqlDataAdapter("SELECT * FROM " + treeView1.SelectedNode.Text, sqlConnection);
                 table = new DataTable();
@@ -55,7 +59,6 @@ namespace EasyDapp
                 MessageBox.Show("Выберите таблицу!", "Ошибка!", MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
-        bool check_fill_name = false;
         private void fill_name_table()
         {
             if (check_fill_name == true)
@@ -66,11 +69,8 @@ namespace EasyDapp
             {
                 check_fill_name = false;
             }
-            string connStr = @"Data Source=SQL5108.site4now.net;Initial Catalog=db_a85cd7_nick;User Id=db_a85cd7_nick_admin;Password=Passvbu011";
-            //treeView1.Nodes[0].Nodes[0].Nodes.Clear();
-            //treeView1.Nodes[0].Nodes[1].Text = "ssssss";
             string sql = "SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_TYPE != 'VIEW'";
-            SqlConnection conn = new SqlConnection(connStr);
+            SqlConnection conn = new SqlConnection(Global_sting_conn);
             try
             {
                 conn.Open();
@@ -104,13 +104,18 @@ namespace EasyDapp
         {
             fill_name_table();
             treeView1.Nodes[0].ExpandAll();
-            //treeView1.Nodes[0].Text = DataBase;
         }
 
         private void View_table_button_Click(object sender, EventArgs e)
         {
             fill_grid_view();
-            
+        }
+
+        private void Req_pictureBox_Click(object sender, EventArgs e)
+        {
+            RequestForm requestForm = new RequestForm();
+            requestForm.sqlConn = Global_sting_conn;
+            requestForm.Show();
         }
     }
 }

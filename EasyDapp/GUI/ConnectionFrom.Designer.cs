@@ -185,6 +185,7 @@ namespace EasyDapp.GUI
             // 
             // OK_button
             // 
+            this.OK_button.Enabled = false;
             this.OK_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.OK_button.Location = new System.Drawing.Point(311, 308);
             this.OK_button.Name = "OK_button";

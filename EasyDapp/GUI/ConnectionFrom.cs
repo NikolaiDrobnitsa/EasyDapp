@@ -18,6 +18,7 @@ namespace EasyDapp.GUI
             InitializeComponent();
         }
         public string DataBase { get; set; }
+        public string ConnString { get; set; }
         private void Check_button_Click(object sender, EventArgs e)
         {
             string connectionString = @"Data Source = " + Name_database_textBox.Text +"; Initial Catalog = "+Name_data_textBox.Text + "; User Id = "+Name_user_textBox.Text+"; Password = "+ Pass_user_textBox.Text;
@@ -27,8 +28,8 @@ namespace EasyDapp.GUI
                 connection.Open();
                 MessageBox.Show("Проверка подключение выполнена!");
                 DataBase = Name_data_textBox.Text;
-
-
+                ConnString = connectionString;
+                OK_button.Enabled = true;
             }
             catch (SqlException ex)
             {
@@ -55,16 +56,6 @@ namespace EasyDapp.GUI
 
         private void OK_button_Click(object sender, EventArgs e)
         {
-            //Form1 form1 = new Form1();
-            //Serialize.saveTree(TreeView, "tree");
-            //form1.treeView1.Nodes.Clear();
-            //form1.treeView1.Nodes[0].Nodes[1].Text = "ssssss";
-            //form1.treeView1.Nodes[0].Text = DataBase;
-            //TreeNode treeNode5 = new TreeNode("dbo_011");
-            //treeNode5.Nodes.Add(treeNode5);
-            //TreeNode treeNode1 = new TreeNode("Pupkin");
-            //treeNode1.Nodes.Add(treeNode1);
-            //form1.treeView1.Refresh();
             this.Close();
         }
 
