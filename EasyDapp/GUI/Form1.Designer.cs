@@ -30,9 +30,10 @@ namespace EasyDapp
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Таблицы");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("dbo_", new System.Windows.Forms.TreeNode[] {
-            treeNode3});
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Таблицы");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("dbo_", new System.Windows.Forms.TreeNode[] {
+            treeNode1});
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
             this.Show_table_label = new System.Windows.Forms.Label();
             this.Show_table_pictureBox = new System.Windows.Forms.PictureBox();
@@ -138,12 +139,12 @@ namespace EasyDapp
             // 
             this.treeView1.Location = new System.Drawing.Point(8, 72);
             this.treeView1.Name = "treeView1";
-            treeNode3.Name = "Tables";
-            treeNode3.Text = "Таблицы";
-            treeNode4.Name = "NameBD";
-            treeNode4.Text = "dbo_";
+            treeNode1.Name = "Tables";
+            treeNode1.Text = "Таблицы";
+            treeNode2.Name = "NameBD";
+            treeNode2.Text = "dbo_";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode4});
+            treeNode2});
             this.treeView1.Size = new System.Drawing.Size(173, 244);
             this.treeView1.TabIndex = 2;
             // 
@@ -197,6 +198,7 @@ namespace EasyDapp
             this.ClientSize = new System.Drawing.Size(869, 450);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "EasyDapp";
             this.panel1.ResumeLayout(false);

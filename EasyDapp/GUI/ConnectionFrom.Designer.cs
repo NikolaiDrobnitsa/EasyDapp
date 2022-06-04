@@ -155,6 +155,7 @@ namespace EasyDapp.GUI
             this.Pass_user_textBox.Name = "Pass_user_textBox";
             this.Pass_user_textBox.Size = new System.Drawing.Size(189, 20);
             this.Pass_user_textBox.TabIndex = 11;
+            this.Pass_user_textBox.UseSystemPasswordChar = true;
             this.Pass_user_textBox.TextChanged += new System.EventHandler(this.Pass_user_textBox_TextChanged);
             // 
             // panel1

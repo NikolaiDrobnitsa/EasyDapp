@@ -61,40 +61,43 @@ namespace EasyDapp
         }
         private void fill_name_table()
         {
-            if (check_fill_name == true)
+            if (Global_sting_conn != null)
             {
-                treeView1.Nodes[0].Nodes[0].Nodes.Clear();
-            }
-            else
-            {
-                check_fill_name = false;
-            }
-            string sql = "SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_TYPE != 'VIEW'";
-            SqlConnection conn = new SqlConnection(Global_sting_conn);
-            try
-            {
-                conn.Open();
-            }
-            catch (SqlException se)
-            {
-                MessageBox.Show("Ошибка" + se);
-                return;
-            }
-            SqlCommand command = new SqlCommand(sql, conn);
-            try
-            {
-                SqlDataReader reader = command.ExecuteReader();
-                while (reader.Read())
+                if (check_fill_name == true)
                 {
-                    treeView1.Nodes[0].Nodes[0].Nodes.Add(reader.GetString(0));
+                    treeView1.Nodes[0].Nodes[0].Nodes.Clear();
                 }
+                else
+                {
+                    check_fill_name = false;
+                }
+                string sql = "SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_TYPE != 'VIEW'";
+                SqlConnection conn = new SqlConnection(Global_sting_conn);
+                try
+                {
+                    conn.Open();
+                }
+                catch (SqlException se)
+                {
+                    MessageBox.Show("Ошибка" + se);
+                    return;
+                }
+                SqlCommand command = new SqlCommand(sql, conn);
+                try
+                {
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        treeView1.Nodes[0].Nodes[0].Nodes.Add(reader.GetString(0));
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("Ошибка:" + ex);
+                }
+                conn.Close();
+                check_fill_name = true;
             }
-            catch (SqlException ex)
-            {
-                MessageBox.Show("Ошибка:" + ex);
-            }
-            conn.Close();
-            check_fill_name = true;
         }
         private void Refresh_button_Click(object sender, EventArgs e)
         {
